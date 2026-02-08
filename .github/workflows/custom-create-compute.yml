@@ -56,8 +56,8 @@ jobs:
         run:  az extension add -n ml -y
       - name: update-extension
         run: az extension update -n ml
-      - name: create-compute-default-tier
-        if: ${{ inputs.cluster_tier == ''}}
+      - name: create-compute-default-tier        
+        if: ${{ steps.compute.outputs.exists != '0' && (inputs.cluster_tier == '' || inputs.cluster_tier == null) }}
         run: |
           az ml compute create --name ${{ inputs.cluster_name }} \
                                   --type AmlCompute \
