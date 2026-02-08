@@ -18,5 +18,5 @@ variables:
   ado_service_connection_aml_ws: Azure-ARM-Prod
 
   # For pipeline reference
-  resource_group: <azuremlstudio>
-  aml_workspace: <MLWorkspace_Training>
+  resource_group: azuremlstudio
+  aml_workspace: MLWorkspace_Training
